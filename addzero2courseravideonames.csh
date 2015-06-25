@@ -1,5 +1,7 @@
 #!/bin/csh
 
+# cases where this doesn't work -- if there are square brackets in the filename
+
 #add initial zero to all single digits in the filename
 foreach mydir ( `find . -maxdepth 1 -mindepth 1 -type d -print0 | xargs -0 | sed -e "s/.\//\n/g" | tr \  \*` )
    echo "entering $mydir"
