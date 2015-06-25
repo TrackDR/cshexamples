@@ -2,7 +2,7 @@
 
 foreach mydir ( `find . -maxdepth 1 -mindepth 1 -type d -print0 | xargs -0 | sed -e "s/.\//\n/g" | tr \  \*` )
    echo "entering $mydir"
-   pushd
+   pushd "$mydir"
    foreach num (`seq 1 9`)
       foreach x ( `find $1 -name "$num - *" | tr \  \*` )
          set y=`basename "$x"`
